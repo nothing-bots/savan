@@ -39,6 +39,10 @@
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
       "value": "10"
+    },
+    "STREAM_URL": {
+      "description": "You Can Use Radio Broadcast",
+      "required": true,
     }
   }
 }
