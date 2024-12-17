@@ -26,9 +26,27 @@ client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
 pytgcalls = PyTgCalls(client)
 
 
-@pytgcalls.on_stream_end()
-def on_stream_end(chat_id: int) -> None:
-    queues.task_done(chat_id)
+from pytgcalls import PyTgCalls
+from pyrogram import Client
+
+api_id = "24620300"
+api_hash = "9a098f01aa56c836f2e34aee4b7ef963"
+bot_token = "8155721991:AAG5s1mh3gykXE7JEovgolr7vO2FPhpx6fk"
+
+# Create pyrogram client instance
+client = Client("my_account", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+
+# Initialize pytgcalls
+pytgcalls = PyTgCalls(client)
+
+# Example of handling stream stop or end event
+@pytgcalls.on_stream_stop()  # Use the correct event handler if on_stream_end doesn't exist
+def on_stream_end_handler(stream):
+    print(f"Stream ended: {stream}")
+
+# Start the client and pytgcalls
+client.start()
+
 
     if queues.is_empty(chat_id):
         pytgcalls.leave_group_call(chat_id)
