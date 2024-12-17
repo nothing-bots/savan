@@ -19,7 +19,7 @@
 from pyrogram import Client
 from pytgcalls import PyTgCalls
 
-from . import config
+from config import SESSION_NAME, API_ID, API_HASH
 from . import queues
 
 client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
