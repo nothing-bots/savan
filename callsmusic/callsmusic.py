@@ -55,10 +55,6 @@ def some_function(chat_id):
         # Ensure the code inside the if statement is indented properly
         print("Queue is empty.")
     pytgcalls.leave_group_call(chat_id)
-    else:
-        pytgcalls.change_stream(
-            chat_id, queues.get(chat_id)["file"]
-        )
 
 
 run = pytgcalls.run
