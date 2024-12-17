@@ -48,8 +48,13 @@ def on_stream_end_handler(stream):
 client.start()
 
 
+    # Example function
+def some_function(chat_id):
+    # Ensure the if statement is indented correctly
     if queues.is_empty(chat_id):
-        pytgcalls.leave_group_call(chat_id)
+        # Ensure the code inside the if statement is indented properly
+        print("Queue is empty.")
+    pytgcalls.leave_group_call(chat_id)
     else:
         pytgcalls.change_stream(
             chat_id, queues.get(chat_id)["file"]
