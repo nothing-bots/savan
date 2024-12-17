@@ -11,7 +11,7 @@ admins = {}
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH", "")
 
-botusername = int(getenv("BOT_USERNAME", "@anya_x_damian_bot"))
+botusername = getenv("BOT_USERNAME", "anya_x_damian_bot")
 
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "10"))
 
